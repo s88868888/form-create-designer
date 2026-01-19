@@ -5,7 +5,7 @@
         <template v-if="hasFieldOptions">
             <el-cascader
                 v-model="cascaderValue"
-                :options="fieldIdOptions"
+                :options="fieldList"
                 :props="cascaderProps"
                 :placeholder="t('form.selectField') || '请选择字段'"
                 :disabled="fieldReadonly || disabled"
@@ -57,12 +57,12 @@ export default defineComponent({
             return this.designer.setupState.t;
         },
         // 获取字段ID选项配置
-        fieldIdOptions() {
-            return this.designer.setupState.fieldIdOptions || [];
+        fieldList() {
+            return this.designer.setupState.fieldList || [];
         },
         // 是否有字段ID选项
         hasFieldOptions() {
-            return is.trueArray(this.fieldIdOptions);
+            return is.trueArray(this.fieldList);
         },
         // 级联选择器配置
         cascaderProps() {

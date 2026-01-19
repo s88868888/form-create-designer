@@ -5,7 +5,7 @@
         <template v-if="hasFieldOptions">
             <a-cascader
                 v-model:value="cascaderValue"
-                :options="fieldIdOptions"
+                :options="fieldList"
                 :field-names="cascaderFieldNames"
                 :placeholder="t('form.selectField') || '请选择字段'"
                 :disabled="fieldReadonly || disabled"
@@ -58,12 +58,12 @@ export default defineComponent({
             return this.designer.setupState.t;
         },
         // 获取字段ID选项配置
-        fieldIdOptions() {
-            return this.designer.setupState.fieldIdOptions || [];
+        fieldList() {
+            return this.designer.setupState.fieldList || [];
         },
         // 是否有字段ID选项
         hasFieldOptions() {
-            return is.trueArray(this.fieldIdOptions);
+            return is.trueArray(this.fieldList);
         },
         // 级联选择器字段名配置
         cascaderFieldNames() {
@@ -89,7 +89,7 @@ export default defineComponent({
             },
             immediate: true
         },
-        fieldIdOptions: {
+        fieldList: {
             handler() {
                 this.cascaderValue = this.findValuePath(this.modelValue);
             },
@@ -102,7 +102,7 @@ export default defineComponent({
         },
         // 根据值查找完整路径
         findValuePath(val) {
-            if (!val || !is.trueArray(this.fieldIdOptions)) return [];
+            if (!val || !is.trueArray(this.fieldList)) return [];
             const path = [];
             const find = (options, target) => {
                 for (const opt of options) {
@@ -120,12 +120,12 @@ export default defineComponent({
                 }
                 return false;
             };
-            find(this.fieldIdOptions, val);
+            find(this.fieldList, val);
             return path;
         },
         // 搜索过滤
         cascaderFilter(inputValue, path) {
-            return path.some(option => 
+            return path.some(option =>
                 option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 ||
                 option.value.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
             );

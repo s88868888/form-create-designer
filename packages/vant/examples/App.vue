@@ -153,7 +153,7 @@ export default {
                 fieldReadonly: false,
                 showSaveBtn: true,
                 // 字段ID选项配置 - 用于动态修改字段ID选项功能
-                fieldIdOptions: [
+                fieldList: [
                     {
                         label: '商品表',
                         value: 'goods_table',

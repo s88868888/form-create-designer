@@ -529,8 +529,8 @@ export default defineComponent({
             return configRef.value.fieldReadonly !== false;
         })
         // 字段ID选项配置 - 用于动态修改字段ID选项功能
-        const fieldIdOptions = computed(() => {
-            return configRef.value.fieldIdOptions || [];
+        const fieldList = computed(() => {
+            return configRef.value.fieldList || [];
         })
         const hiddenMenu = computed(() => {
             return configRef.value.hiddenMenu || [];
@@ -2495,7 +2495,7 @@ export default defineComponent({
             handle,
             inputCheckStatus,
             fieldReadonly,
-            fieldIdOptions,
+            fieldList,
             hiddenMenu,
             hiddenItem,
             hiddenDragMenu,
