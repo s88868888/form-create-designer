@@ -221,12 +221,18 @@ export default {
     const getCellStyles = (col, type) => {
       const styles = {}
       
-      // 宽度
+      // 宽度处理：优先级 width > minWidth > 自动填充
       if (col.width) {
+        // 固定宽度：不伸缩
         styles.width = typeof col.width === 'number' ? `${col.width}px` : col.width
-        styles.flexShrink = 0
+        styles.flex = 'none'
       } else if (col.minWidth) {
+        // 最小宽度：允许伸缩
         styles.minWidth = typeof col.minWidth === 'number' ? `${col.minWidth}px` : col.minWidth
+        styles.flex = '1'
+      } else {
+        // 自动填充剩余空间
+        styles.flex = '1'
       }
       
       // 对齐方式
@@ -331,7 +337,6 @@ export default {
 /* 单元格 */
 ._fc-vxe-table-cell {
   position: relative;
-  flex: 1;
   padding: 12px 10px;
   text-align: left;
   box-sizing: border-box;

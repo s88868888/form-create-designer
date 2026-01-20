@@ -4,7 +4,7 @@
       <div class="_fd-vxe-table-cell" 
            v-for="(col, idx) in displayColumns" 
            :key="idx"
-           :style="{textAlign: col.align || headerAlign || 'left', width: col.width ? col.width + 'px' : 'auto', minWidth: col.minWidth ? col.minWidth + 'px' : 'auto'}">
+           :style="getCellStyle(col, headerAlign)">
         {{ col.title || col.label || '列' + (idx + 1) }}
       </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="_fd-vxe-table-cell" 
              v-for="(col, cidx) in displayColumns" 
              :key="cidx"
-             :style="{textAlign: col.align || align || 'left', width: col.width ? col.width + 'px' : 'auto', minWidth: col.minWidth ? col.minWidth + 'px' : 'auto'}">
+             :style="getCellStyle(col, align)">
           {{ row[col.field || col.value] || '-' }}
         </div>
       </div>
@@ -62,6 +62,30 @@ export default defineComponent({
     headerAlign: {
       type: String,
       default: 'left'
+    }
+  },
+  methods: {
+    getCellStyle(col, defaultAlign) {
+      const style = {
+        textAlign: col.align || defaultAlign || 'left'
+      };
+      
+      // 如果设置了固定宽度，使用固定宽度并禁止伸缩
+      if (col.width) {
+        style.width = typeof col.width === 'number' ? col.width + 'px' : col.width;
+        style.flex = 'none';
+      } 
+      // 如果只设置了最小宽度，允许伸缩但有最小宽度限制
+      else if (col.minWidth) {
+        style.minWidth = typeof col.minWidth === 'number' ? col.minWidth + 'px' : col.minWidth;
+        style.flex = '1';
+      }
+      // 如果都没设置，自动填充剩余空间
+      else {
+        style.flex = '1';
+      }
+      
+      return style;
     }
   },
   computed: {
@@ -129,7 +153,6 @@ export default defineComponent({
 }
 
 ._fd-vxe-table-cell {
-  flex: 1;
   padding: 12px 10px;
   text-align: left;
   overflow: hidden;
