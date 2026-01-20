@@ -118,9 +118,6 @@ export default defineComponent({
             if (!field) {
                 errorMessage(this.t('computed.fieldEmpty'));
                 return oldField;
-            } else if (!/^[a-zA-Z]/.test(field)) {
-                errorMessage(this.t('computed.fieldChar'));
-                return oldField;
             } else if (oldField !== field) {
                 const flag = field.indexOf('.') > -1;
                 if (flag) {

@@ -124,6 +124,17 @@ const En = {
         addRight: 'Add right column',
         keyValue: 'key-value',
     },
+    tableColumnConfig: {
+        add: 'Add Column',
+        title: 'Title',
+        titlePlaceholder: 'Enter column title',
+        field: 'Field',
+        fieldPlaceholder: 'Select or enter field',
+        width: 'Width',
+        widthPlaceholder: 'Auto',
+        minWidth: 'Min Width',
+        auto: 'Auto',
+    },
     struct: {
         title: 'Edit',
         only: '[{label}] Only one allowed to be added',
@@ -937,6 +948,39 @@ const En = {
                 autoUpload: 'Whether to upload the file immediately after selecting it',
                 disabled: 'Disabled',
                 limit: 'Maximum number of uploads allowed'
+            }
+        },
+        vxeTable: {
+            name: 'VXE Table',
+            event: {
+                cellClick: 'Triggered when a cell is clicked',
+                cellDblclick: 'Triggered when a cell is double-clicked',
+                editClosed: 'Triggered when cell edit state is closed',
+                editActived: 'Triggered when a cell is activated for editing',
+                checkboxChange: 'Triggered when checkbox state changes',
+                checkboxAll: 'Triggered when select-all checkbox state changes',
+                radioChange: 'Triggered when radio state changes',
+                currentChange: 'Triggered when current row changes',
+                sortChange: 'Triggered when sort changes',
+                filterChange: 'Triggered when filter changes'
+            },
+            props: {
+                height: 'Table height',
+                maxHeight: 'Maximum height',
+                border: 'Show border',
+                stripe: 'Stripe style',
+                showHeader: 'Show header',
+                showFooter: 'Show footer',
+                resizable: 'Column resizable',
+                loading: 'Loading state',
+                align: 'Content alignment',
+                headerAlign: 'Header alignment',
+                showOverflow: 'Content overflow ellipsis',
+                showHeaderOverflow: 'Header overflow ellipsis',
+                highlightCurrentRow: 'Highlight current row',
+                highlightHoverRow: 'Highlight on hover',
+                columns: 'Column configuration',
+                data: 'Table data'
             }
         }
     },

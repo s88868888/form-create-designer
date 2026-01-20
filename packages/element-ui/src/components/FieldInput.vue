@@ -3,16 +3,32 @@
         <i class="fc-icon icon-group" @click.stop="copy"></i>
         <!-- 有字段ID选项时显示下拉框 -->
         <template v-if="hasFieldOptions">
-            <el-cascader
-                v-model="cascaderValue"
-                :options="fieldList"
-                :props="cascaderProps"
+            <el-select
+                v-model="selectValue"
                 :placeholder="t('form.selectField') || '请选择字段'"
                 :disabled="fieldReadonly || disabled"
                 clearable
                 filterable
-                @change="onCascaderChange"
-            />
+                allow-create
+                default-first-option
+                @change="onSelectChange"
+            >
+                <el-option-group
+                    v-for="group in fieldList"
+                    :key="group.value"
+                    :label="group.label"
+                >
+                    <el-option
+                        v-for="item in group.children"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value"
+                    >
+                        <span style="float: left">{{ item.label }}</span>
+                        <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
+                    </el-option>
+                </el-option-group>
+            </el-select>
         </template>
         <!-- 没有选项时显示原来的输入框 -->
         <template v-else>
@@ -64,28 +80,18 @@ export default defineComponent({
         hasFieldOptions() {
             return is.trueArray(this.fieldList);
         },
-        // 级联选择器配置
-        cascaderProps() {
-            return {
-                value: 'value',
-                label: 'label',
-                children: 'children',
-                emitPath: false, // 只返回选中节点的值，不返回路径
-                checkStrictly: false, // 只能选择叶子节点
-            };
-        }
     },
     data() {
         return {
             value: this.modelValue || '',
             oldValue: '',
-            cascaderValue: this.modelValue || '',
+            selectValue: this.modelValue || '',
         }
     },
     watch: {
         modelValue(n) {
             this.value = n;
-            this.cascaderValue = n;
+            this.selectValue = n;
         }
     },
     methods: {
@@ -117,9 +123,6 @@ export default defineComponent({
             let field = (this.value || '').replace(/[\s\　]/g, '');
             if (!field) {
                 errorMessage(this.t('computed.fieldEmpty'));
-                return oldField;
-            } else if (!/^[a-zA-Z]/.test(field)) {
-                errorMessage(this.t('computed.fieldChar'));
                 return oldField;
             } else if (oldField !== field) {
                 const flag = field.indexOf('.') > -1;
@@ -155,16 +158,18 @@ export default defineComponent({
                 }
             }
         },
-        // 级联选择器变化处理
-        onCascaderChange(val) {
+        // 下拉选择器变化处理
+        onSelectChange(val) {
             if (val && val !== this.modelValue) {
                 this.oldValue = this.modelValue;
+                // 去除空格
+                val = val.replace(/[\s\　]/g, '');
                 this.value = val;
-                this.cascaderValue = val;
+                this.selectValue = val;
                 // 检查是否重复
                 if (this.getSubFieldChildren().filter(v => v.field === val).length > 0) {
                     errorMessage(this.t('computed.fieldExist', {label: val}));
-                    this.cascaderValue = this.modelValue;
+                    this.selectValue = this.modelValue;
                     return;
                 }
                 this.designer.emit('changeField', {field: val, oldField: this.modelValue, rule: this.activeRule});
@@ -204,7 +209,7 @@ export default defineComponent({
     cursor: pointer;
 }
 
-._fd-field-input .el-cascader {
+._fd-field-input .el-select {
     width: 100%;
 }
 </style>

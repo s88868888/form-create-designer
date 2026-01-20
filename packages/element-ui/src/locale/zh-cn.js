@@ -124,6 +124,17 @@ const ZhCn = {
         addRight: '添加右列',
         keyValue: '键值对',
     },
+    tableColumnConfig: {
+        add: '添加列',
+        title: '标题',
+        titlePlaceholder: '请输入列标题',
+        field: '字段',
+        fieldPlaceholder: '请选择或输入字段',
+        width: '宽度',
+        widthPlaceholder: '自动',
+        minWidth: '最小宽度',
+        auto: '自动',
+    },
     struct: {
         title: '编辑数据',
         only: '【{label}】只允许添加一个',
@@ -939,6 +950,39 @@ const ZhCn = {
                 autoUpload: '是否在选取文件后立即进行上传',
                 disabled: '是否禁用',
                 limit: '最大允许上传个数'
+            }
+        },
+        vxeTable: {
+            name: 'VXE表格',
+            event: {
+                cellClick: '单元格被点击时触发',
+                cellDblclick: '单元格被双击时触发',
+                editClosed: '单元格编辑状态关闭时触发',
+                editActived: '单元格被激活编辑时触发',
+                checkboxChange: '复选框状态改变时触发',
+                checkboxAll: '全选复选框状态改变时触发',
+                radioChange: '单选框状态改变时触发',
+                currentChange: '当前行改变时触发',
+                sortChange: '排序改变时触发',
+                filterChange: '筛选改变时触发'
+            },
+            props: {
+                height: '表格高度',
+                maxHeight: '最大高度',
+                border: '显示边框',
+                stripe: '斑马纹',
+                showHeader: '显示表头',
+                showFooter: '显示表尾',
+                resizable: '列宽拖动',
+                loading: '加载状态',
+                align: '内容对齐',
+                headerAlign: '表头对齐',
+                showOverflow: '内容溢出省略',
+                showHeaderOverflow: '表头溢出省略',
+                highlightCurrentRow: '高亮当前行',
+                highlightHoverRow: '悬停高亮',
+                columns: '列配置',
+                data: '表格数据'
             }
         }
     },

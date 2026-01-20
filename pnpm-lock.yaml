@@ -249,6 +249,12 @@ importers:
       vuedraggable:
         specifier: 4.1.0
         version: 4.1.0(vue@3.5.17(typescript@4.9.5))
+      vxe-pc-ui:
+        specifier: ^4.7.14
+        version: 4.12.6(vue@3.5.17(typescript@4.9.5))
+      vxe-table:
+        specifier: ^4.14.4
+        version: 4.17.43(vue@3.5.17(typescript@4.9.5))
     devDependencies:
       '@element-plus/icons-vue':
         specifier: ^0.2.6
@@ -1573,6 +1579,11 @@ packages:
 
   '@vueuse/shared@9.13.0':
     resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
+
+  '@vxe-ui/core@4.2.21':
+    resolution: {integrity: sha512-WcwKvNwovuAy+t0t40PwkDvMlCCOWCGSl19qmTq+NYn4GuMfItUsHwfdszO6UD90ozOMyPJzdxLwcfVijYpLng==}
+    peerDependencies:
+      vue: ^3.2.0
 
   '@webassemblyjs/ast@1.9.0':
     resolution: {integrity: sha512-C6wW5L+b7ogSDVqymbkkvuW9kruN//YisMED04xzeBBqjHa2FYnmvOlS6Xj68xWQRgWvI9cIglsjFowH/RJyEA==}
@@ -2944,6 +2955,9 @@ packages:
 
   dom-serializer@1.4.1:
     resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
+
+  dom-zindex@1.0.6:
+    resolution: {integrity: sha512-FKWIhiU96bi3xpP9ewRMgANsoVmMUBnMnmpCT6dPMZOunVYJQmJhSRruoI0XSPoHeIif3kyEuiHbFrOJwEJaEA==}
 
   domain-browser@1.2.0:
     resolution: {integrity: sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==}
@@ -7025,6 +7039,12 @@ packages:
     peerDependencies:
       vue: ^3.0.1
 
+  vxe-pc-ui@4.12.6:
+    resolution: {integrity: sha512-OX4GIQIf0iHOZTBSqEtTTluQ1xVqqT+4cI7dTLwhbOyC5Uj+hHcAeXzxrNg4qIEueTGvHjIaNOm5T3wKvJ69fw==}
+
+  vxe-table@4.17.43:
+    resolution: {integrity: sha512-KwtwB5hJictkENS8UxcC6Ov7qG8IwwBIHaaZiuZcDL7az0VvSqlbGRUbgKnhzRrNDVw8gW1D1XN98XtAYa1QnA==}
+
   wangeditor@4.7.15:
     resolution: {integrity: sha512-aPTdREd8BxXVyJ5MI+LU83FQ7u1EPd341iXIorRNYSOvoimNoZ4nPg+yn3FGbB93/owEa6buLw8wdhYnMCJQLg==}
 
@@ -7170,6 +7190,9 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+
+  xe-utils@3.8.4:
+    resolution: {integrity: sha512-1X5k3nUcMatNo+99fZsHFrZ/WW4k4E6tT1ODO6wRncXOdq10QfVaqc70mFwOrHE/P1W8hDhbrnWXxSHwWY3rFQ==}
 
   xtend@4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
@@ -9177,6 +9200,12 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@vxe-ui/core@4.2.21(vue@3.5.17(typescript@4.9.5))':
+    dependencies:
+      dom-zindex: 1.0.6
+      vue: 3.5.17(typescript@4.9.5)
+      xe-utils: 3.8.4
+
   '@webassemblyjs/ast@1.9.0':
     dependencies:
       '@webassemblyjs/helper-module-context': 1.9.0
@@ -10687,6 +10716,8 @@ snapshots:
       domhandler: 4.3.1
       entities: 2.2.0
 
+  dom-zindex@1.0.6: {}
+
   domain-browser@1.2.0: {}
 
   domelementtype@1.3.1: {}
@@ -11547,7 +11578,7 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 2.3.8
 
-  follow-redirects@1.15.9(debug@4.3.7(supports-color@6.1.0)):
+  follow-redirects@1.15.9(debug@4.3.7):
     optionalDependencies:
       debug: 4.3.7(supports-color@6.1.0)
 
@@ -12029,9 +12060,9 @@ snapshots:
 
   http-parser-js@0.5.8: {}
 
-  http-proxy-middleware@0.19.1(debug@4.3.7(supports-color@6.1.0))(supports-color@6.1.0):
+  http-proxy-middleware@0.19.1(debug@4.3.7)(supports-color@6.1.0):
     dependencies:
-      http-proxy: 1.18.1(debug@4.3.7(supports-color@6.1.0))
+      http-proxy: 1.18.1(debug@4.3.7)
       is-glob: 4.0.3
       lodash: 4.17.21
       micromatch: 3.1.10(supports-color@6.1.0)
@@ -12042,17 +12073,17 @@ snapshots:
   http-proxy-middleware@1.3.1(debug@4.3.7):
     dependencies:
       '@types/http-proxy': 1.17.15
-      http-proxy: 1.18.1(debug@4.3.7(supports-color@6.1.0))
+      http-proxy: 1.18.1(debug@4.3.7)
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.8
     transitivePeerDependencies:
       - debug
 
-  http-proxy@1.18.1(debug@4.3.7(supports-color@6.1.0)):
+  http-proxy@1.18.1(debug@4.3.7):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.9(debug@4.3.7(supports-color@6.1.0))
+      follow-redirects: 1.15.9(debug@4.3.7)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -15330,6 +15361,18 @@ snapshots:
       sortablejs: 1.14.0
       vue: 3.5.17(typescript@4.9.5)
 
+  vxe-pc-ui@4.12.6(vue@3.5.17(typescript@4.9.5)):
+    dependencies:
+      '@vxe-ui/core': 4.2.21(vue@3.5.17(typescript@4.9.5))
+    transitivePeerDependencies:
+      - vue
+
+  vxe-table@4.17.43(vue@3.5.17(typescript@4.9.5)):
+    dependencies:
+      vxe-pc-ui: 4.12.6(vue@3.5.17(typescript@4.9.5))
+    transitivePeerDependencies:
+      - vue
+
   wangeditor@4.7.15:
     dependencies:
       '@babel/runtime': 7.25.7
@@ -15410,7 +15453,7 @@ snapshots:
       del: 4.1.1
       express: 4.21.0(supports-color@6.1.0)
       html-entities: 1.4.0
-      http-proxy-middleware: 0.19.1(debug@4.3.7(supports-color@6.1.0))(supports-color@6.1.0)
+      http-proxy-middleware: 0.19.1(debug@4.3.7)(supports-color@6.1.0)
       import-local: 2.0.0
       internal-ip: 4.3.0
       ip: 1.1.9
@@ -15562,6 +15605,8 @@ snapshots:
   ws@6.2.3:
     dependencies:
       async-limiter: 1.0.1
+
+  xe-utils@3.8.4: {}
 
   xtend@4.0.2: {}
 

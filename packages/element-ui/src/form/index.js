@@ -4,6 +4,7 @@ import FcTitle from '../components/FcTitle.vue';
 import SignaturePad from '../components/SignaturePad.vue';
 import TableForm from '../components/tableForm/TableForm.vue';
 import Table from '../components/table/Table.vue';
+import VxeTableBasic from '../components/VxeTableBasic.vue';
 
 const install = (formCreate) => {
     formCreate.component('FcEditor', FcEditor);
@@ -11,6 +12,7 @@ const install = (formCreate) => {
     formCreate.component('SignaturePad', SignaturePad);
     formCreate.component('TableForm', TableForm);
     formCreate.component('FcTable', Table);
+    formCreate.component('FcVxeTable', VxeTableBasic);
 }
 
 install(formCreate);
