@@ -390,7 +390,7 @@
                 </el-aside>
                 <div class="_fc-l-open" v-if="hiddenLeft" @click="hiddenLeft = false"><i class="fc-icon icon-arrow"></i></div>
                 <div class="_fc-r-open" v-if="hiddenRight" @click="hiddenRight = false"><i class="fc-icon icon-arrow"></i></div>
-                <el-dialog v-model="preview.state" width="80%" class="_fd-preview-dialog" append-to-body>
+                <el-dialog v-model="preview.state" width="90%" class="_fd-preview-dialog" append-to-body>
                     <el-tabs class="_fd-preview-tabs" v-model="previewStatus">
                         <el-tab-pane :label="t('form.formMode')" name="form"></el-tab-pane>
                         <el-tab-pane :label="t('form.componentMode')" name="component"></el-tab-pane>
@@ -401,15 +401,17 @@
                         <i class="fc-icon icon-copy"></i>
                     </div>
                     <template v-if="previewStatus === 'form'">
-                        <ViewForm :rule="preview.rule" :option="preview.option" v-model:api="preview.api"
-                                  @submit="previewSubmit"
-                                  @reset="previewReset"
-                                  :locale="locale?.name"
-                                  v-if="preview.state">
-                            <template v-for="(_, name) in $slots" #[name]="scope">
-                                <slot :name="name" v-bind="scope ?? {}"/>
-                            </template>
-                        </ViewForm>
+                        <div class="_fd-preview-form">
+                            <ViewForm :rule="preview.rule" :option="preview.option" v-model:api="preview.api"
+                                      @submit="previewSubmit"
+                                      @reset="previewReset"
+                                      :locale="locale?.name"
+                                      v-if="preview.state">
+                                <template v-for="(_, name) in $slots" #[name]="scope">
+                                    <slot :name="name" v-bind="scope ?? {}"/>
+                                </template>
+                            </ViewForm>
+                        </div>
                     </template>
                     <pre class="_fd-preview-code" ref="previewCode" v-else-if="previewStatus === 'component'"><code v-html="preview.component"></code></pre>
                     <pre class="_fd-preview-code" ref="previewCode" v-else><code v-html="preview.html"></code></pre>

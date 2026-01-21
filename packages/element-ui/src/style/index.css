@@ -1,6 +1,6 @@
 ._fc-designer {
     height: 100%;
-    min-height: 500px;
+    min-height: 550px;
     overflow: hidden;
     cursor: default;
     position: relative;
@@ -8,6 +8,7 @@
     --fc-drag-empty: "拖拽左侧列表中的组件到此处";
     --fc-child-empty: "点击右下角 \e789  按钮添加一列";
     --fc-tool-border-color: #2E73FF;
+    /* --el-dialog-margin-top: 10vh !important; */
 }
 
 ._fc-designer > .el-main {
@@ -762,20 +763,76 @@
     border-radius: 6px;
     padding-top: 0;
     min-height: 40%;
+    /* margin-top: 50px; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-top: 0px;
 }
 
 ._fd-preview-dialog .el-dialog__header {
-    position: absolute;
-    right: 0;
-    top: 0;
-    float: right;
-    z-index: 9;
+    position: relative;
+    padding: 0px 20px 10px;
+}
+
+._fd-preview-dialog .el-dialog__headerbtn {
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+._fd-preview-dialog .el-dialog__body {
+    padding: 20px 20px 20px;
+}
+
+._fd-preview-form {
+    margin-top: 0;
+    max-height: 600px;
+    overflow: auto;
+}
+
+._fd-preview-form::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+._fd-preview-form::-webkit-scrollbar-thumb {
+    background: #DCDFE6;
+    border-radius: 3px;
+}
+
+._fd-preview-form::-webkit-scrollbar-thumb:hover {
+    background: #C0C4CC;
+}
+
+._fd-preview-form::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 ._fd-preview-code {
     margin-top: 0;
-    max-height: 510px;
+    max-height: 550px;
     overflow: auto;
+}
+
+._fd-preview-code::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+._fd-preview-code::-webkit-scrollbar-thumb {
+    background: #DCDFE6;
+    border-radius: 3px;
+}
+
+._fd-preview-code::-webkit-scrollbar-thumb:hover {
+    background: #C0C4CC;
+}
+
+._fd-preview-code::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 ._fd-preview-tabs .el-tabs__nav-wrap::after {
