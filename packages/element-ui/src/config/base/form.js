@@ -66,6 +66,41 @@ export default function form({t}) {
             value: false,
             title: t('form.resetBtn'),
         }, {
+            type: 'switch',
+            field: '_detailBtn>show',
+            value: false,
+            title: t('form.detailBtn'),
+        }, {
+            type: 'input',
+            field: '_detailBtn>innerText',
+            value: '',
+            title: t('form.detailBtnText'),
+            props: {
+                placeholder: t('form.detailBtnTextPlaceholder')
+            },
+            control: [{
+                value: true,
+                rule: [{
+                    type: 'hidden',
+                    field: '_detailBtn>show'
+                }]
+            }]
+        }, {
+            type: 'input',
+            field: '_detailBtn>routeName',
+            value: '',
+            title: t('form.detailBtnRouteName'),
+            props: {
+                placeholder: t('form.detailBtnRouteNamePlaceholder')
+            },
+            control: [{
+                value: true,
+                rule: [{
+                    type: 'hidden',
+                    field: '_detailBtn>show'
+                }]
+            }]
+        }, {
             type: 'FnConfig',
             field: 'formCreate_event',
             name: 'event',

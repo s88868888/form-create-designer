@@ -1092,11 +1092,15 @@ export default defineComponent({
                 delete options._event;
                 options.submitBtn = options._submitBtn;
                 options.resetBtn = options._resetBtn;
+                options.detailBtn = options._detailBtn;
                 if (!options.resetBtn.innerText) {
                     options.resetBtn.innerText = t('props.reset');
                 }
                 if (!options.submitBtn.innerText) {
                     options.submitBtn.innerText = t('props.submit');
+                }
+                if (!options.detailBtn.innerText) {
+                    options.detailBtn.innerText = t('form.detailBtnTextPlaceholder');
                 }
                 const formData = deepCopy(data.inputForm.data);
                 if (Object.keys(formData).length > 0) {
@@ -1121,6 +1125,7 @@ export default defineComponent({
                 })
                 delete options._submitBtn;
                 delete options._resetBtn;
+                delete options._detailBtn;
                 return options;
             },
             getOptions() {
@@ -1199,7 +1204,8 @@ export default defineComponent({
                 }
                 options._resetBtn = typeof options.resetBtn === 'object' ? options.resetBtn : {show: options.resetBtn === true};
                 options._submitBtn = typeof options.submitBtn === 'object' ? options.submitBtn : {show: options.submitBtn !== false};
-                options.submitBtn = options.resetBtn = false;
+                options._detailBtn = typeof options.detailBtn === 'object' ? options.detailBtn : {show: options.detailBtn === true, innerText: '', routeName: ''};
+                options.submitBtn = options.resetBtn = options.detailBtn = false;
                 data.inputForm.data = options.formData || {};
                 data.oldOptionsKeys = Object.keys(data.form.value);
                 delete options.formData;

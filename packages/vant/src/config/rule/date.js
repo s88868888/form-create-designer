@@ -32,8 +32,25 @@ export default {
                 field: 'clearable',
             },
             {
+                type: 'switch',
+                field: 'hideArrow',
+            },
+            {
+                type: 'switch',
+                field: 'disabledNoGray',
+            },
+            {
                 type: 'input',
                 field: 'title',
+            },
+            {
+                type: 'input',
+                field: 'format',
+                value: 'YYYY-MM-DD HH:mm:ss',
+            },
+            {
+                type: 'input',
+                field: 'valueFormat',
             },
             {
                 type: 'checkbox',
