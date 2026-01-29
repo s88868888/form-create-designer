@@ -989,6 +989,19 @@ const ZhCn = {
                 columns: '列配置',
                 data: '表格数据'
             }
+        },
+        fileList: {
+            name: '附件列表',
+            event: {
+                preview: '预览文件时触发',
+                download: '下载文件时触发'
+            },
+            props: {
+                showSize: '显示文件大小',
+                showDownload: '显示下载按钮',
+                showBatchDownload: '显示批量下载',
+                showDownloadAll: '显示下载全部'
+            }
         }
     },
 };

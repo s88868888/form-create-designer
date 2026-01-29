@@ -987,9 +987,23 @@ const En = {
                 columns: 'Column configuration',
                 data: 'Table data'
             }
+        },
+        fileList: {
+            name: 'File List',
+            event: {
+                preview: 'Triggered when previewing a file',
+                download: 'Triggered when downloading a file'
+            },
+            props: {
+                showSize: 'Show file size',
+                showDownload: 'Show download button',
+                showBatchDownload: 'Show batch download',
+                showDownloadAll: 'Show download all'
+            }
         }
     },
 };
 
 export default En;
+
 
