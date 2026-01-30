@@ -23,7 +23,10 @@ export default {
         showSize: true,
         showDownload: true,
         showBatchDownload: true,
-        showDownloadAll: true
+        showDownloadAll: true,
+        showActions: true,
+        showHeader: true,
+        doubleClickPreview: false
       }
     };
   },
@@ -52,6 +55,24 @@ export default {
         field: 'showDownloadAll',
         title: '显示下载全部',
         value: true
+      },
+      {
+        type: 'switch',
+        field: 'showActions',
+        title: '显示操作列',
+        value: true
+      },
+      {
+        type: 'switch',
+        field: 'showHeader',
+        title: '显示顶部操作栏',
+        value: true
+      },
+      {
+        type: 'switch',
+        field: 'doubleClickPreview',
+        title: '双击行预览',
+        value: false
       }
     ];
   }

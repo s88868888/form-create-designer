@@ -1000,7 +1000,10 @@ const ZhCn = {
                 showSize: '显示文件大小',
                 showDownload: '显示下载按钮',
                 showBatchDownload: '显示批量下载',
-                showDownloadAll: '显示下载全部'
+                showDownloadAll: '显示下载全部',
+                showActions: '显示操作列',
+                showHeader: '显示顶部操作栏',
+                doubleClickPreview: '双击行预览'
             }
         }
     },

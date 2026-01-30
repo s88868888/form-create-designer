@@ -998,7 +998,10 @@ const En = {
                 showSize: 'Show file size',
                 showDownload: 'Show download button',
                 showBatchDownload: 'Show batch download',
-                showDownloadAll: 'Show download all'
+                showDownloadAll: 'Show download all',
+                showActions: 'Show action column',
+                showHeader: 'Show header toolbar',
+                doubleClickPreview: 'Double click to preview'
             }
         }
     },
