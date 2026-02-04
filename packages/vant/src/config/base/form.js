@@ -54,6 +54,36 @@ export default function form({t}) {
             title: t('form.labelWidth'),
         },
         {
+            type: 'input',
+            field: 'labelColor',
+            title: t('form.labelColor'),
+            value: '#9ca3af',
+            props: {
+                type: 'color'
+            }
+        },
+        {
+            type: 'switch',
+            field: 'labelBold',
+            title: t('form.labelBold'),
+            value: false,
+        },
+        {
+            type: 'input',
+            field: 'valueColor',
+            title: t('form.valueColor'),
+            value: '#111827',
+            props: {
+                type: 'color'
+            }
+        },
+        {
+            type: 'switch',
+            field: 'valueBold',
+            title: t('form.valueBold'),
+            value: false,
+        },
+        {
             type: 'switch',
             field: 'colon',
             title: t('form.colon'),

@@ -14,6 +14,7 @@ import slider from './rule/slider';
 import calendar from './rule/calendar';
 import calendarRange from './rule/calendarRange';
 import uploader from './rule/uploader';
+import fileList from './rule/fileList';
 import group from './rule/group';
 import subForm from './rule/subForm';
 import tableForm from './rule/tableForm';
@@ -41,7 +42,7 @@ import title from './rule/title';
 
 
 const ruleList = [
-    input, textarea, password, stepper, radio, checkbox, select, _switch, rate, time, date, cascader, calendar, calendarRange, slider, uploader, signaturePad,
+    input, textarea, password, stepper, radio, checkbox, select, _switch, rate, time, date, cascader, calendar, calendarRange, slider, uploader, fileList, signaturePad,
     group, subForm, tableForm, tableFormColumn,
     noticeBar, button, title, text, html, divider, tag, image, icon,
     row, col, table,

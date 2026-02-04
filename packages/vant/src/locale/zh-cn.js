@@ -12,6 +12,10 @@ const ZhCn = {
         size: '表单的尺寸',
         event: '表单事件',
         labelWidth: '标签的宽度',
+        labelColor: '标签颜色',
+        labelBold: '标签加粗',
+        valueColor: '内容颜色',
+        valueBold: '内容加粗',
         hideRequiredAsterisk: '隐藏必填字段的标签旁边的红色星号',
         showMessage: '显示校验错误信息',
         inlineMessage: '以行内形式展示校验信息',
@@ -836,6 +840,13 @@ const ZhCn = {
                 maxCount: '文件上传数量限制',
                 maxSize: '文件大小限制，单位为 byte',
                 accept: '允许上传的文件类型',
+            }
+        },
+        fileList: {
+            name: '附件列表',
+            event: {
+                preview: '预览文件时触发',
+                download: '下载文件时触发'
             }
         },
         vanCellGroup: {
