@@ -31,6 +31,7 @@ import ValueInput from './components/ValueInput.vue';
 import VxeTableBasic from './components/VxeTableBasic.vue';
 import VxeTableView from './components/vxeTable/VxeTableView.vue';
 import ElTableView from './components/elTable/ElTableView.vue';
+import FcFileList from './components/FcFileList';
 import formCreate, {designerForm} from './utils/form';
 import FcEditor from '@form-create/component-wangeditor';
 import draggable from 'vuedraggable/src/vuedraggable';
@@ -89,6 +90,7 @@ addComponent('TableForm', TableForm, TableFormView);
 addComponent('FcTable', Table, TableView);
 addComponent('FcVxeTable', VxeTableBasic, VxeTableView);
 addComponent('FcElTable', ElTableView, ElTableView);
+addComponent('fcFileList', FcFileList);
 
 const install = function (Vue) {
     Vue.component('FcDesigner', FcDesigner);

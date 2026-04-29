@@ -9,6 +9,11 @@ import 'vxe-pc-ui/lib/style.css';
 import VxeTable from 'vxe-table';
 import 'vxe-table/lib/style.css';
 
+formCreate.useApp((_, app) => {
+    app.use(VxeUI);
+    app.use(VxeTable);
+});
+
 const app = createApp(App);
 
 app.use(ELEMENT);

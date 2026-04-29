@@ -20,7 +20,8 @@ export default {
       $required: false,
       value: [],
       props: {
-        showSize: true,
+        showSize: false,
+        showOperator: false,
         showDownload: true,
         showBatchDownload: true,
         showDownloadAll: true,
@@ -36,7 +37,13 @@ export default {
         type: 'switch',
         field: 'showSize',
         title: '显示文件大小',
-        value: true
+        value: false
+      },
+      {
+        type: 'switch',
+        field: 'showOperator',
+        title: '显示上传人',
+        value: false
       },
       {
         type: 'switch',

@@ -1,0 +1,109 @@
+{
+  "description": "Vant 表单 Label 和 Value 样式配置示例",
+  "examples": [
+    {
+      "name": "默认配置",
+      "config": {
+        "form": {
+          "labelColor": "#9ca3af",
+          "labelBold": false,
+          "valueColor": "#111827",
+          "valueBold": false
+        }
+      },
+      "description": "使用默认的灰色标签和深色内容，不加粗"
+    },
+    {
+      "name": "加粗配置",
+      "config": {
+        "form": {
+          "labelColor": "#9ca3af",
+          "labelBold": true,
+          "valueColor": "#111827",
+          "valueBold": true
+        }
+      },
+      "description": "标签和内容都加粗显示"
+    },
+    {
+      "name": "高对比度配置",
+      "config": {
+        "form": {
+          "labelColor": "#000000",
+          "labelBold": true,
+          "valueColor": "#1a1a1a",
+          "valueBold": false
+        }
+      },
+      "description": "使用黑色标签加粗，深灰色内容"
+    },
+    {
+      "name": "彩色配置",
+      "config": {
+        "form": {
+          "labelColor": "#3b82f6",
+          "labelBold": false,
+          "valueColor": "#10b981",
+          "valueBold": false
+        }
+      },
+      "description": "蓝色标签，绿色内容"
+    },
+    {
+      "name": "浅色配置",
+      "config": {
+        "form": {
+          "labelColor": "#d1d5db",
+          "labelBold": false,
+          "valueColor": "#6b7280",
+          "valueBold": false
+        }
+      },
+      "description": "浅灰色标签，中灰色内容（适合深色背景）"
+    },
+    {
+      "name": "强调内容配置",
+      "config": {
+        "form": {
+          "labelColor": "#9ca3af",
+          "labelBold": false,
+          "valueColor": "#111827",
+          "valueBold": true
+        }
+      },
+      "description": "标签正常，内容加粗以强调用户输入"
+    },
+    {
+      "name": "强调标签配置",
+      "config": {
+        "form": {
+          "labelColor": "#374151",
+          "labelBold": true,
+          "valueColor": "#6b7280",
+          "valueBold": false
+        }
+      },
+      "description": "标签加粗以强调字段名称，内容正常"
+    }
+  ],
+  "colorPalette": {
+    "description": "推荐的颜色值",
+    "colors": {
+      "black": "#000000",
+      "gray-900": "#111827",
+      "gray-700": "#374151",
+      "gray-500": "#6b7280",
+      "gray-400": "#9ca3af",
+      "gray-300": "#d1d5db",
+      "blue-500": "#3b82f6",
+      "green-500": "#10b981",
+      "red-500": "#ef4444",
+      "yellow-500": "#eab308",
+      "purple-500": "#a855f7"
+    }
+  },
+  "usage": {
+    "inDesigner": "在设计器的表单配置面板中，找到'标签颜色'、'标签加粗'、'内容颜色'、'内容加粗'配置项进行设置",
+    "inCode": "在创建表单时，通过 form 配置对象设置 labelColor、labelBold、valueColor、valueBold 属性"
+  }
+}
